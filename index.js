@@ -9,14 +9,14 @@ class Carro {
     }
   }
   
-  // Criando um objeto da classe
+  
   const carro = new Carro('chevrolet', 'celta', 'compacto', 2023, 30000, 40000);
   
 
 
 
 
-// Função GET
+
 function Get() {
     return fetch('https://apigenerator.dronahq.com/api/jQIrTpJi/carro')
       .then(response => response.json())
@@ -24,10 +24,10 @@ function Get() {
       .catch(error => console.error('Erro ao fazer GET:', error));
   }
   
-  // Função POST, PUT, DELETE
+  
   async function postData(url = '', data = {}) {
     const response = await fetch(url, {
-      method: 'PUT', // Altere para 'PUT', 'DELETE', etc.
+      method: 'PUT', 
       mode: 'cors',
       cache: 'no-cache',
       credentials: 'same-origin',
@@ -39,10 +39,10 @@ function Get() {
       body: JSON.stringify(data),
     });
   
-    return response.json(); // Retorna a resposta da API
+    return response.json(); 
   }
   
-  // Usando POST com o objeto 'carro'
+  
   postData('https://apigenerator.dronahq.com/api/jQIrTpJi/carro/1', carro)
     .then(data => console.log(data))
     .catch(error => console.error('Erro ao fazer POST:', error));
